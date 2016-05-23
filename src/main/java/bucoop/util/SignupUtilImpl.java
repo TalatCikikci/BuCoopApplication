@@ -28,6 +28,8 @@ public class SignupUtilImpl implements SignupUtil {
         final Userbasic userBasic = new Userbasic();
         userBasic.setUsername(username);
         userBasic.setPassword(password);
+        userBasic.setType("basic");
+        userBasic.setActive(true);
         userBasicDto.persistUserBasicInfo(userBasic);
         return true;
     }
