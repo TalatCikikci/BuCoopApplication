@@ -21,7 +21,7 @@ public class LoginController {
     private LoginUtil loginUtil;  
     
     @RequestMapping(value = "", method = RequestMethod.GET)
-    public String displayHome(Model model) {
+    public String displayLogin(Model model) {
         return "login";
     }
     
