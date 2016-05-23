@@ -22,7 +22,7 @@ public class UserbasicDtoImpl implements UserbasicDto {
     }
 
     @Override
-    public boolean userExistsWithMail(String username, String password) {
+    public boolean userExistsWithName(String username, String password) {
         Userbasic userBasic = new Userbasic();
         userBasic.setUsername(username);
         userBasic.setPassword(password);
@@ -38,7 +38,7 @@ public class UserbasicDtoImpl implements UserbasicDto {
     }
 
     @Override
-    public Userbasic getAppUserWithMail(String username) {
+    public Userbasic getAppUserWithName(String username) {
         Userbasic userBasic = new Userbasic();
         userBasic.setUsername(username);
         Userbasic persistedAppUser = (Userbasic) entityManager.createQuery("SELECT a FROM Userbasic a WHERE a.username = :username")
@@ -63,7 +63,7 @@ public class UserbasicDtoImpl implements UserbasicDto {
     @Override
     @Transactional
    public  void setType(String username , String userType) {
-        final Userbasic userBasic = getAppUserWithMail(username);
+        final Userbasic userBasic = getAppUserWithName(username);
         entityManager.merge(userBasic);
         userBasic.setType(userType);
         entityManager.flush();
