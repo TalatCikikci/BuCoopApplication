@@ -21,16 +21,13 @@
                             <li class="active"><a href="<c:url value="/" />">Home</a></li>
                             <li><a href="<c:url value="/login" />">Login</a></li>
                             <li><a href="<c:url value="/signup"/>">Sign Up</a></li>
-                            <li><a href="<c:url value="/signup"/>">Console</a></li>
+                            <li><a href="<c:url value="/adminconsole"/>">Console</a></li>
                         </ul>
                         <form class="navbar-form">
                             <div class="form-group" style="display:inline;">
                                 <div class="input-group">
-                                    <input type="text" class="form-control">
-                                    <span class="input-group-addon">
-                                        <span class="glyphicon glyphicon-search">
-                                        </span>
-                                    </span>
+                                    <input type="text" class="form-control" placeholder="Search...">
+                                     <button class="btn">Search</button>
                                  </div>
                             </div>
                         </form>        

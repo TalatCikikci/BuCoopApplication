@@ -4,7 +4,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>BuCoop - Admin Console</title>
+        <title>BuCoop - Admin Console - Producers</title>
     </head>
     <body>
         <div class="span3">
@@ -20,3 +20,4 @@
         </div>
     </body>
 </html>
+
