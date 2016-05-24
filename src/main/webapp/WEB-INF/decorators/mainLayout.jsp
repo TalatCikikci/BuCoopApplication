@@ -48,9 +48,9 @@
     
     <body>
         <%@include file="header.jsp"%>
-<!--        <div id="message" class="alert alert-info">
+        <!--<div id="message" class="alert alert-info">-->
             
-        </div>-->
+        </div>
  
         <div class="container-fluid">
             <div class="row-fluid">

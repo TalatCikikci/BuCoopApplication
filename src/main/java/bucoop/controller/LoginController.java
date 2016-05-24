@@ -40,14 +40,14 @@ public class LoginController {
 //        }
 
         final String successMessage = "Successfully logged in!";
-        final Userbasic appUser = loginUtil.getAppUserWithName(username);
+        final Userbasic userbasic = loginUtil.getAppUserWithName(username);
 
         redirectAttributes.addFlashAttribute("successMessage", successMessage);
         redirectAttributes.addFlashAttribute("sessionUser", username);
-        redirectAttributes.addFlashAttribute("sessionUserAsBean", appUser);
+        redirectAttributes.addFlashAttribute("sessionUserAsBean", userbasic);
 
         httpServletRequest.getSession().setAttribute("sessionUser", username);
-        httpServletRequest.getSession().setAttribute("sessionUserAsBean", appUser);
+        httpServletRequest.getSession().setAttribute("sessionUserAsBean", userbasic);
 
         return "redirect:/";
     }

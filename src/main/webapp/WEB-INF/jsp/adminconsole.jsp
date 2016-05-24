@@ -10,7 +10,7 @@
         <div class="span3">
             <div class="well sidebar-nav">
                 <ul class="nav nav-list">
-                    <h3>Administrative Tools</h3>
+                    <h4>Administrative Tools</h4>
                     <li><a href="<c:url value="/useradmin" />">Users</a></li>
                     <li><a href="<c:url value="/productadmin" />">Products</a></li>
                     <li><a href="<c:url value="/produceradmin" />">Producers</a></li>
