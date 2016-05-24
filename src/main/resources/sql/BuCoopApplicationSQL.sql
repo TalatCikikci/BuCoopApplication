@@ -99,3 +99,5 @@ CREATE TABLE `memberrequest` (
   `id` INT(10) PRIMARY KEY AUTO_INCREMENT,
   `requesterid` INT(10)
 );
+
+INSERT INTO userbasic (username,password,type,active) VALUES ('superadmin','super123','superadmin',1);
