@@ -15,6 +15,11 @@ public class ProfileController {
     
     @RequestMapping(value = "/editprofile", method = RequestMethod.GET)
     public String displayEditProfile(Model model) {
+        return "editprofile";
+    }
+    
+    @RequestMapping(value = "/editaction", method = RequestMethod.POST)
+    public String editProfile(Model model) {
         return "profile";
     }
 }

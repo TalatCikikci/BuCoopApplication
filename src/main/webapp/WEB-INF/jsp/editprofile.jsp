@@ -1,4 +1,4 @@
-%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -11,9 +11,10 @@
                 <div class="span12">
                     <div class="span6">
                         <div class="area">
+                            <form class="form-horizontal" method="post" role="form" action="/editaction">
                                 
                                 <div class="page-header">
-                                    <h1 class="form-heading">Profile Page of ${sessionUser} <button class="btn btn-mini"><a href="/editprofile" class="navbar-link">Edit</a></button></h1>
+                                    <h1 class="form-heading">Profile Page of ${sessionUser}</h1>
                                 </div>
 
                                 <div class="control-group">
@@ -47,6 +48,12 @@
                                         <textarea id="profileAbout" rows="5" type="text" name="about"></textarea>
                                     </div>
                                 </div>
+
+                                <div class="control-group">
+                                    <div class="controls"> <button class="btn btn-success" type="submit">Save</button>
+                                    </div>
+                                </div>
+                            </form>
                         </div>
                     </div>
                     <div class="span6">
