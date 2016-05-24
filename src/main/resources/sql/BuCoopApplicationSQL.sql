@@ -92,3 +92,10 @@ CREATE TABLE `commentrate` (
   `rating` INT(5),
   `active` BOOLEAN DEFAULT TRUE
 );
+
+DROP TABLE IF EXISTS `memberrequest`;
+
+CREATE TABLE `memberrequest` (
+  `id` INT(10) PRIMARY KEY AUTO_INCREMENT,
+  `requesterid` INT(10)
+);
