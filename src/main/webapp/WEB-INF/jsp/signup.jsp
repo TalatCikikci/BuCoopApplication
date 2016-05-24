@@ -13,8 +13,8 @@
                         <div class="area">
                             <form class="form-horizontal" method="post" role="form" action="/signup">
                                 
-                                <div class="heading">
-                                    <h4 class="form-heading">Sign Up</h4>
+                                <div class="page-header">
+                                    <h1 class="form-heading">Sign Up</h1>
                                 </div>
 
                                 <div class="control-group">

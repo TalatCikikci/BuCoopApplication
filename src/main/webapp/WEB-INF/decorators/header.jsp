@@ -15,7 +15,9 @@
                     <a class="brand" href="<c:url value="/" />">BuCoop</a>
                     <div class="nav-collapse collapse">
                         <p class="navbar-text pull-right">
-                            <!--Logged in as <a href="#" class="navbar-link"><c:out value=""/></a>-->
+                            <c:if test="${not empty sessionUser}">
+                                Logged in as <a href="/profile" class="navbar-link"><c:out value="${sessionUser}"/></a>
+                            </c:if>
                         </p>
                         <ul class="nav">
                             <li class="active"><a href="<c:url value="/" />">Home</a></li>

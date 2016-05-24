@@ -12,8 +12,8 @@
                     <div class="span6">
                         <div class="area">
                             <form class="form-horizontal" method="post" role="form" action="/login">
-                                <div class="heading">
-                                    <h4 class="form-heading">Login</h4>
+                                <div class="page-header">
+                                    <h1 class="form-heading">Login</h1>
                                 </div>
 
                                 <div class="control-group">
