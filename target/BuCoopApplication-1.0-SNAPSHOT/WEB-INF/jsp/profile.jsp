@@ -19,10 +19,6 @@
                                 <div class="control-group">
                                     <label class="control-label" for="profileFirstName">
                                         First Name
-                                        <label class="checkbox">
-                                            <input type="checkbox" name="profileVisible">
-                                            Private?
-                                        </label>
                                     </label>
 
                                     <div class="controls">
@@ -33,10 +29,6 @@
                                 <div class="control-group">
                                     <label class="control-label" for="profileLastName">
                                         Last Name
-                                        <label class="checkbox">
-                                            <input type="checkbox" name="profileVisible">
-                                            Private?
-                                        </label>
                                     </label>
 
                                     <div class="controls">
@@ -47,10 +39,6 @@
                                 <div class="control-group">
                                     <label class="control-label" for="profileEmail">
                                         E-Mail
-                                        <label class="checkbox">
-                                            <input type="checkbox" name="profileVisible">
-                                            Private?
-                                        </label>
                                     </label>
 
                                     <div class="controls">
@@ -61,10 +49,6 @@
                                 <div class="control-group">
                                     <label class="control-label" for="profileAbout">
                                         About
-                                        <label class="checkbox">
-                                            <input type="checkbox" name="profileVisible">
-                                            Private?
-                                        </label>
                                     </label>
 
                                     <div class="controls">

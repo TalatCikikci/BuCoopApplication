@@ -18,35 +18,64 @@
                                 </div>
 
                                 <div class="control-group">
-                                    <label class="control-label" for="profileFirstName">First Name</label>
+                                    <label class="control-label" for="profileFirstName">
+                                        First Name
+                                    </label>
 
                                     <div class="controls">
                                         <input id="profileFirstName" type="text" name="firstname">
                                     </div>
+                                                               
+                                    <div class="controls">
+                                        <label class="checkbox">
+                                            <input type="checkbox" name="profileVisible">
+                                            Private?
+                                        </label>
+                                    </div>
                                 </div>
                                     
                                 <div class="control-group">
-                                    <label class="control-label" for="profileLastName">Last Name</label>
+                                    <label class="control-label" for="profileLastName">
+                                        Last Name
+                                    </label>
 
                                     <div class="controls">
                                         <input id="profileLastName" type="text" name="lastname">
                                     </div>
+                                    
+                                    <div class="controls">
+                                        <label class="checkbox">
+                                            <input type="checkbox" name="profileVisible">
+                                            Private?
+                                        </label>
+                                    </div>
                                 </div>
 
                                 <div class="control-group">
-                                    <label class="control-label" for="profileEmail">E-Mail</label>
+                                    <label class="control-label" for="profileEmail">
+                                        E-Mail
+                                    </label>
 
                                     <div class="controls">
                                         <input id="profileEmail" type="text" name="email">
                                     </div>
+                                                                        
+                                    <div class="controls">
+                                        <label class="checkbox">
+                                            <input type="checkbox" name="profileVisible">
+                                            Private?
+                                        </label>
+                                    </div>
                                 </div>
 
                                 <div class="control-group">
-                                    <label class="control-label" for="profileAbout">About</label>
+                                    <label class="control-label" for="profileAbout">
+                                        About
+                                    </label>
 
                                     <div class="controls">
                                         <textarea id="profileAbout" rows="5" type="text" name="about"></textarea>
-                                    </div>
+                                    </div
                                 </div>
 
                                 <div class="control-group">
