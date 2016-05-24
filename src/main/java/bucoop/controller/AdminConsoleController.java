@@ -18,9 +18,19 @@ public class AdminConsoleController {
         return "useradmin";
     }
     
+    @RequestMapping(value = "/requestadmin", method = RequestMethod.GET)
+    public String displayRequestadmin(Model model) {
+        return "requestadmin";
+    }
+    
     @RequestMapping(value = "/productadmin", method = RequestMethod.GET)
     public String displayProductadmin(Model model) {
         return "productadmin";
+    }
+    
+    @RequestMapping(value = "/addproduct", method = RequestMethod.GET)
+    public String displayAddProductadmin(Model model) {
+        return "addproduct";
     }
     
     @RequestMapping(value = "/produceradmin", method = RequestMethod.GET)
@@ -28,8 +38,38 @@ public class AdminConsoleController {
         return "produceradmin";
     }
     
+    @RequestMapping(value = "/addproducer", method = RequestMethod.GET)
+    public String displayAddProduceradmin(Model model) {
+        return "addproducer";
+    }
+    
     @RequestMapping(value = "/announcementadmin", method = RequestMethod.GET)
     public String displayAnnouncementadmin(Model model) {
         return "announcementadmin";
+    }
+    
+    @RequestMapping(value = "/addannouncement", method = RequestMethod.GET)
+    public String displayAddAnnouncementadmin(Model model) {
+        return "addannouncement";
+    }
+    
+    @RequestMapping(value = "/requestadmin", method = RequestMethod.POST)
+    public String confirmRequestadmin(Model model) {
+        return "redirect:useradmin";
+    }
+    
+    @RequestMapping(value = "/addproduct", method = RequestMethod.POST)
+    public String addProductadmin(Model model) {
+        return "redirect:productadmin";
+    }
+    
+    @RequestMapping(value = "/addproducer", method = RequestMethod.POST)
+    public String addProduceradmin(Model model) {
+        return "redirect:produceradmin";
+    }
+    
+    @RequestMapping(value = "/addannouncement", method = RequestMethod.POST)
+    public String addAnnouncementadmin(Model model) {
+        return "redirect:announcementadmin";
     }
 }

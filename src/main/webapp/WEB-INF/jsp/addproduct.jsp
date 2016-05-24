@@ -4,14 +4,14 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>BuCoop - Admin  - Users</title>
+        <title>BuCoop - Admin Console - Product</title>
     </head>
     <body>
         <div class="container">
             <div class="row-fluid">
                 <div class="span12">
                     <div class="page-header">
-                        <h1 class="form-heading">User List</h1>
+                        <h1 class="form-heading">Add Product</h1>
                     </div>
                     <div class="span3">
                         <div class="well sidebar-nav">
@@ -62,42 +62,49 @@
                     </div>
                     <div class="span6">
                         <div class="area">
-                            <div class="table-responsive">
-                                <table class="table-hover table-bordered">
-                                  <thead>
-                                        <tr>
-                                            <th>ID</th>
-                                            <th>Username</th>
-                                            <th>User Mail</th>
-                                            <th>Operations</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>John</td>
-                                            <td>Doe</td>
-                                            <td>john@example.com</td>
-                                            <td></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Mary</td>
-                                            <td>Moe</td>
-                                            <td>mary@example.com</td>
-                                            <td></td>
-                                        </tr>
-                                        <tr>
-                                            <td>July</td>
-                                            <td>Dooley</td>
-                                            <td>july@example.com</td>
-                                            <td></td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
+                            <form class="form-horizontal" method="post" role="form" action="/addproduct">
+
+                                <div class="control-group">
+                                    <label class="control-label" for="inputProductname">Product Name</label>
+
+                                    <div class="controls">
+                                        <input id="inputProductname" placeholder="E.g. Kars Gravyeri" type="text" name="productname">
+                                    </div>
+                                </div>
+
+                                <div class="control-group">
+                                    <label class="control-label" for="inputDescription">Product Description</label>
+
+                                    <div class="controls">
+                                        <textarea id="inputDescription" placeholder="E.g. Description / Phone / Address" type="text" name="productdesc"></textarea>
+                                    </div>
+                                </div>
+
+                                <div class="control-group">
+                                    <label class="control-label" for="inputProducer">Producer</label>
+
+                                    <div class="controls">
+                                        <input id="inputProducer" type="text" name="producer">
+                                    </div>
+                                </div>
+                                
+                                <div class="control-group">
+                                    <label class="control-label" for="inputCategory">Category</label>
+
+                                    <div class="controls">
+                                        <input id="inputCategory" type="text" name="category">
+                                    </div>
+                                </div>
+
+                                <div class="control-group">
+                                    <div class="controls"> <button class="btn btn-success" type="submit">Add</button>
+                                    </div>
+                                </div>
+                            </form>
                         </div>
-                    </div> 
-                </div>            
+                    </div>
+                </div>
             </div>
-        </div>                  
+        </div>
     </body>
 </html>

@@ -25,15 +25,16 @@ import javax.xml.bind.annotation.XmlRootElement;
  * @author z003j14c
  */
 @Entity
-@Table(name = "producer", catalog = "bucoopdb", schema = "")
+@Table(name = "product")
 @XmlRootElement
 @NamedQueries({
-    @NamedQuery(name = "Producer.findAll", query = "SELECT p FROM Producer p"),
-    @NamedQuery(name = "Producer.findById", query = "SELECT p FROM Producer p WHERE p.id = :id"),
-    @NamedQuery(name = "Producer.findByProducername", query = "SELECT p FROM Producer p WHERE p.producername = :producername"),
-    @NamedQuery(name = "Producer.findByLocation", query = "SELECT p FROM Producer p WHERE p.location = :location"),
-    @NamedQuery(name = "Producer.findByActive", query = "SELECT p FROM Producer p WHERE p.active = :active")})
-public class Producer implements Serializable {
+    @NamedQuery(name = "Product.findAll", query = "SELECT p FROM Product p"),
+    @NamedQuery(name = "Product.findById", query = "SELECT p FROM Product p WHERE p.id = :id"),
+    @NamedQuery(name = "Product.findByProductname", query = "SELECT p FROM Product p WHERE p.productname = :productname"),
+    @NamedQuery(name = "Product.findByProducer", query = "SELECT p FROM Product p WHERE p.producer = :producer"),
+    @NamedQuery(name = "Product.findByCategory", query = "SELECT p FROM Product p WHERE p.category = :category"),
+    @NamedQuery(name = "Product.findByActive", query = "SELECT p FROM Product p WHERE p.active = :active")})
+public class Product implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @Basic(optional = false)
@@ -41,23 +42,31 @@ public class Producer implements Serializable {
     @Column(name = "id")
     private Integer id;
     @Size(max = 40)
-    @Column(name = "producername")
-    private String producername;
+    @Column(name = "productname")
+    private String productname;
     @Lob
     @Size(max = 2147483647)
-    @Column(name = "producerdesc")
-    private String producerdesc;
-    @Size(max = 400)
-    @Column(name = "location")
-    private String location;
+    @Column(name = "productdesc")
+    private String productdesc;
+    @Basic(optional = false)
+    @NotNull
+    @Column(name = "producer")
+    private int producer;
+    @Column(name = "category")
+    private Integer category;
     @Column(name = "active")
     private Boolean active;
 
-    public Producer() {
+    public Product() {
     }
 
-    public Producer(Integer id) {
+    public Product(Integer id) {
         this.id = id;
+    }
+
+    public Product(Integer id, int producer) {
+        this.id = id;
+        this.producer = producer;
     }
 
     public Integer getId() {
@@ -68,28 +77,36 @@ public class Producer implements Serializable {
         this.id = id;
     }
 
-    public String getProducername() {
-        return producername;
+    public String getProductname() {
+        return productname;
     }
 
-    public void setProducername(String producername) {
-        this.producername = producername;
+    public void setProductname(String productname) {
+        this.productname = productname;
     }
 
-    public String getProducerdesc() {
-        return producerdesc;
+    public String getProductdesc() {
+        return productdesc;
     }
 
-    public void setProducerdesc(String producerdesc) {
-        this.producerdesc = producerdesc;
+    public void setProductdesc(String productdesc) {
+        this.productdesc = productdesc;
     }
 
-    public String getLocation() {
-        return location;
+    public int getProducer() {
+        return producer;
     }
 
-    public void setLocation(String location) {
-        this.location = location;
+    public void setProducer(int producer) {
+        this.producer = producer;
+    }
+
+    public Integer getCategory() {
+        return category;
+    }
+
+    public void setCategory(Integer category) {
+        this.category = category;
     }
 
     public Boolean getActive() {
@@ -110,10 +127,10 @@ public class Producer implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Producer)) {
+        if (!(object instanceof Product)) {
             return false;
         }
-        Producer other = (Producer) object;
+        Product other = (Product) object;
         if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
             return false;
         }
@@ -122,7 +139,7 @@ public class Producer implements Serializable {
 
     @Override
     public String toString() {
-        return "bucoop.model.Producer[ id=" + id + " ]";
+        return "bucoop.model.Product[ id=" + id + " ]";
     }
     
 }

@@ -4,14 +4,14 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>BuCoop - Admin  - Users</title>
+        <title>BuCoop - Admin Console - Users</title>
     </head>
     <body>
         <div class="container">
             <div class="row-fluid">
                 <div class="span12">
                     <div class="page-header">
-                        <h1 class="form-heading">User List</h1>
+                        <h1 class="form-heading">Pending Member Requests</h1>
                     </div>
                     <div class="span3">
                         <div class="well sidebar-nav">
@@ -67,7 +67,7 @@
                                   <thead>
                                         <tr>
                                             <th>ID</th>
-                                            <th>Username</th>
+                                            <th>Requester Username</th>
                                             <th>User Mail</th>
                                             <th>Operations</th>
                                         </tr>
@@ -95,9 +95,9 @@
                                 </table>
                             </div>
                         </div>
-                    </div> 
-                </div>            
+                    </div>
+                </div>
             </div>
-        </div>                  
+        </div>
     </body>
 </html>
