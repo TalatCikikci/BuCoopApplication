@@ -30,6 +30,7 @@ public class SignupController {
     
     @RequestMapping(method = RequestMethod.POST, value = "")
     public String signUp(@RequestParam String username,
+                         @RequestParam String email,
                          @RequestParam String password,
                          Model model,
                          RedirectAttributes redirectAttributes,
@@ -41,7 +42,7 @@ public class SignupController {
 //        }
 
         final boolean signUpSuccessful
-                = signupUtil.signUp(username, password);
+                = signupUtil.signUp(username, email, password);
 
 //        if (!signUpSuccessful) {
 //        }

@@ -48,6 +48,11 @@
     
     <body>
         <%@include file="header.jsp"%>
+        <c:if test="${not empty successMessage}">
+            <div id="message" class="alert alert-info">
+                    ${successMessage}
+            </div>
+        </c:if>
         <!--<div id="message" class="alert alert-info">-->
             
         </div>

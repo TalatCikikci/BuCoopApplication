@@ -25,13 +25,13 @@
                                     </div>
                                 </div>
 
-<!--                                <div class="control-group">
+                                <div class="control-group">
                                     <label class="control-label" for="inputEmail">E-Mail</label>
 
                                     <div class="controls">
                                         <input id="inputEmail" placeholder="E.g. johndoe@domain.com" type="text" name="email">
                                     </div>
-                                </div>-->
+                                </div>
 
                                 <div class="control-group">
                                     <label class="control-label" for="inputPassword">Password</label>
