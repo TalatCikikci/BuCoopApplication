@@ -16,14 +16,14 @@
                     <div class="nav-collapse collapse">
                         <p class="navbar-text pull-right">
                             <c:if test="${not empty sessionUser}">
-                                Logged in as <a href="/profile" class="navbar-link"><c:out value="${sessionUser}"/></a>
+                                Logged in as <a href="${pageContext.servletContext.contextPath}/profile" class="navbar-link"><c:out value="${sessionUser}"/></a>
                             </c:if>
                         </p>
                         <ul class="nav">
                             <li class="active"><a href="<c:url value="/" />">Home</a></li>
-                            <li><a href="<c:url value="/login" />">Login</a></li>
-                            <li><a href="<c:url value="/signup"/>">Sign Up</a></li>
-                            <li><a href="<c:url value="/adminconsole"/>">Console</a></li>
+                            <li><a href="<c:url value="${pageContext.servletContext.contextPath}/login" />">Login</a></li>
+                            <li><a href="<c:url value="${pageContext.servletContext.contextPath}/signup"/>">Sign Up</a></li>
+                            <li><a href="<c:url value="${pageContext.servletContext.contextPath}/adminconsole"/>">Console</a></li>
                         </ul>
                         <form class="navbar-form">
                             <div class="form-group" style="display:inline;">
