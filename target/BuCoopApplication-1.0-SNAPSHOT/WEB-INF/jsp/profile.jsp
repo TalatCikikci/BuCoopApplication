@@ -13,7 +13,7 @@
                         <div class="area">
                                 
                                 <div class="page-header">
-                                    <h1 class="form-heading">Profile Page of ${sessionUser} <button class="btn btn-mini"><a href="/editprofile" class="navbar-link">Edit</a></button></h1>
+                                    <h1 class="form-heading">Profile Page of ${sessionUser} <button class="btn btn-mini"><a href="${pageContext.servletContext.contextPath}/editprofile" class="navbar-link">Edit</a></button></h1>
                                 </div>
 
                                 <div class="control-group">

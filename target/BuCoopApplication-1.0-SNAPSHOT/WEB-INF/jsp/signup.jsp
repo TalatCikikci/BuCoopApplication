@@ -11,7 +11,7 @@
                 <div class="span12">
                     <div class="span6">
                         <div class="area">
-                            <form class="form-horizontal" method="post" role="form" action="/signup">
+                            <form class="form-horizontal" method="post" role="form" action="${pageContext.servletContext.contextPath}/signup">
                                 
                                 <div class="page-header">
                                     <h1 class="form-heading">Sign Up</h1>

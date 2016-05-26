@@ -62,7 +62,7 @@
                     </div>
                     <div class="span6">
                         <div class="area">
-                            <form class="form-horizontal" method="post" role="form" action="/addproduct">
+                            <form class="form-horizontal" method="post" role="form" action="${pageContext.servletContext.contextPath}/addproduct">
 
                                 <div class="control-group">
                                     <label class="control-label" for="inputProductname">Product Name</label>

@@ -62,7 +62,7 @@
                     </div>
                     <div class="span6">
                         <div class="area">
-                            <form class="form-horizontal" method="post" role="form" action="/addproducer">
+                            <form class="form-horizontal" method="post" role="form" action="${pageContext.servletContext.contextPath}/addproducer">
 
                                 <div class="control-group">
                                     <label class="control-label" for="inputProducername">Producer Name</label>

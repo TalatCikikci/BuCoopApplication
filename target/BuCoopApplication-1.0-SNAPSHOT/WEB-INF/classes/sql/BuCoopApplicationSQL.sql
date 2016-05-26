@@ -55,7 +55,7 @@ CREATE TABLE `product` (
   `active` BOOLEAN DEFAULT TRUE
 );
 
-DROP TABLE IF EXISTS `product`;
+DROP TABLE IF EXISTS `tag`;
 
 CREATE TABLE `tag` (
   `id` INT(10) PRIMARY KEY AUTO_INCREMENT,
@@ -92,3 +92,12 @@ CREATE TABLE `commentrate` (
   `rating` INT(5),
   `active` BOOLEAN DEFAULT TRUE
 );
+
+DROP TABLE IF EXISTS `memberrequest`;
+
+CREATE TABLE `memberrequest` (
+  `id` INT(10) PRIMARY KEY AUTO_INCREMENT,
+  `requesterid` INT(10)
+);
+
+INSERT INTO userbasic (username,password,type,active) VALUES ('superadmin','super123','superadmin',1);

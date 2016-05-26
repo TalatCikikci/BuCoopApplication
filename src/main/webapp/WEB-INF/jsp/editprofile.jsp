@@ -11,7 +11,7 @@
                 <div class="span12">
                     <div class="span6">
                         <div class="area">
-                            <form class="form-horizontal" method="post" role="form" action="/editaction">
+                            <form class="form-horizontal" method="post" role="form" action="${pageContext.servletContext.contextPath}/editaction">
                                 
                                 <div class="page-header">
                                     <h1 class="form-heading">Profile Page of ${sessionUser}</h1>

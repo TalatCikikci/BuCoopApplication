@@ -1,5 +1,5 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page session="true" %>
 <!DOCTYPE html>
 <html>
@@ -16,7 +16,7 @@
                     <div class="nav-collapse collapse">
                         <p class="navbar-text pull-right">
                             <c:if test="${not empty sessionUser}">
-                                Logged in as <a href="/profile" class="navbar-link"><c:out value="${sessionUser}"/></a>
+                                Logged in as <a href="${pageContext.servletContext.contextPath}/profile" class="navbar-link"><c:out value="${sessionUser}"/></a>
                             </c:if>
                         </p>
                         <ul class="nav">
