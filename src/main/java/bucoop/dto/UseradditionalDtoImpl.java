@@ -19,7 +19,7 @@ public class UseradditionalDtoImpl implements UseradditionalDto {
     }
     
     @Override
-    public Useradditional getUserAdditionalWithId(long userId) {
+    public Useradditional getUserAdditionalWithId(Integer userId) {
         final Useradditional userAdditional = entityManager.find(Useradditional.class, userId);
         if (userAdditional == null) {
             return null;

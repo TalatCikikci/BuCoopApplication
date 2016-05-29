@@ -1,4 +1,5 @@
-%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -22,7 +23,7 @@
                                     </label>
 
                                     <div class="controls">
-                                        <input id="profileFirstName" type="text" name="firstname" readonly>
+                                        <input id="profileFirstName" type="text" name="firstname" value="${sessionFirstName}" readonly>
                                     </div>
                                 </div>
                                     
@@ -32,7 +33,7 @@
                                     </label>
 
                                     <div class="controls">
-                                        <input id="profileLastName" type="text" name="lastname" readonly>
+                                        <input id="profileLastName" type="text" name="lastname" value="${sessionSurname}" readonly>
                                     </div>
                                 </div>
 
@@ -42,7 +43,7 @@
                                     </label>
 
                                     <div class="controls">
-                                        <input id="profileEmail" type="text" name="email" readonly>
+                                        <input id="profileEmail" type="text" name="email" value="${sessionEmail}" readonly>
                                     </div>
                                 </div>
 
@@ -52,13 +53,18 @@
                                     </label>
 
                                     <div class="controls">
-                                        <textarea id="profileAbout" rows="5" type="text" name="about" readonly></textarea>
+                                        <textarea id="profileAbout" rows="5" type="text" name="about" readonly><c:out value="${sessionAbout}"/></textarea>
                                     </div>
                                 </div>
                         </div>
                     </div>
                     <div class="span6">
-
+                        <c:if test="${sessionAvatar==null}">
+                            <img src="http://placehold.it/750x500" alt="Profile Image" class="img-responsive">
+                        </c:if>
+                        <c:if test="${sessionAvatar!=null}">
+                            <img  value="<c:out value="${sessionAvatar}"/>" alt="">
+                        </c:if>
                     </div>
                 </div>
             </div>

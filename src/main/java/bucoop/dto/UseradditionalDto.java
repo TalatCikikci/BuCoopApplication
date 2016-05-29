@@ -7,6 +7,6 @@ public interface UseradditionalDto {
     
     void persistUserAdditionalInfo(Useradditional userAdditional);
     
-    Useradditional getUserAdditionalWithId(long userId);
+    Useradditional getUserAdditionalWithId(Integer userId);
     
 }

@@ -48,7 +48,7 @@ public class SignupUtilImpl implements SignupUtil {
         userAdditional.setEmail(email);
         userAdditionalDto.persistUserAdditionalInfo(userAdditional);
         userPrivacy.setId(userID);
-        userPrivacyDto.persistUserAdditionalInfo(userPrivacy);
+        userPrivacyDto.persistUserPrivacyInfo(userPrivacy);
         return true;
     }
 }
