@@ -71,6 +71,7 @@ public class ProfileController {
     
     @RequestMapping(value = "/editaction", method = RequestMethod.POST)
     public String editProfile(Model model) {
-        return "profile";
+        
+        return "redirect:profile";
     }
 }

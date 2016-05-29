@@ -23,10 +23,10 @@ public class SignupUtilImpl implements SignupUtil {
 
     @Override
     public boolean checkSignUpAllowed(String username, String password) {
-        if (username == null){
+        if (username.isEmpty()){
             return false;
         }
-        else if (password == null){
+        else if (password.isEmpty()){
             return false;
         }
 
