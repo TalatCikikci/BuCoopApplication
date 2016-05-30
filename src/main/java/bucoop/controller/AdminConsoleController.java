@@ -1,8 +1,10 @@
 package bucoop.controller;
 
 import bucoop.dto.CategoryDto;
+import bucoop.model.Announcement;
 import bucoop.model.Category;
 import bucoop.model.Userbasic;
+import bucoop.util.AnnouncementUtil;
 import bucoop.util.ProductUtil;
 import bucoop.util.ProfileUtil;
 import java.util.List;
@@ -24,6 +26,9 @@ public class AdminConsoleController {
     
     @Autowired
     private ProfileUtil profileUtil;
+    
+    @Autowired
+    private AnnouncementUtil announcementUtil;
     
     @RequestMapping(value = "/adminconsole", method = RequestMethod.GET)
     public String displayConsole(Model model) {
@@ -75,7 +80,9 @@ public class AdminConsoleController {
     }
     
     @RequestMapping(value = "/announcementadmin", method = RequestMethod.GET)
-    public String displayAnnouncementadmin(Model model) {
+    public String displayAnnouncementadmin(HttpServletRequest httpServletRequest) {
+        final List<Announcement> announcementList = announcementUtil.getAnnouncementList();
+        httpServletRequest.getSession().setAttribute("announcementList", announcementList);
         return "announcementadmin";
     }
     
@@ -120,7 +127,23 @@ public class AdminConsoleController {
     }
     
     @RequestMapping(value = "/addannouncement", method = RequestMethod.POST)
-    public String addAnnouncementadmin(Model model) {
+    public String addAnnouncementadmin(@RequestParam String announcementtitle,
+                                    String announcementbody,
+                                    Model model,
+                                    RedirectAttributes redirectAttributes,
+                                    HttpServletRequest httpServletRequest) {
+        
+        final boolean announcementAdded = announcementUtil.addAnnouncement(announcementtitle, announcementbody);
+        
+        if (!announcementAdded) {
+            final String successMessage = "Announcement could not be added!";
+            redirectAttributes.addFlashAttribute("successMessage", successMessage);
+            return "redirect:addannouncement";
+        }
+        
+        final String successMessage = "Announcement created!";
+        redirectAttributes.addFlashAttribute("successMessage", successMessage);
+        
         return "redirect:announcementadmin";
     }
 }

@@ -2,9 +2,7 @@ package bucoop.util;
 
 import bucoop.dto.CategoryDto;
 import bucoop.model.Category;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -34,11 +32,13 @@ public class ProductUtilImpl implements ProductUtil{
         return true;
     }
     
+    
     @Override
     public List<Category> getCategoryList(){
         final List<Category> categoryCollection = categoryDto.getCategoryList();
         return categoryCollection;
     }
+    
     
     @Override
     public Category getCategoryById(Integer categoryID) {
