@@ -68,4 +68,11 @@ public class UserbasicDtoImpl implements UserbasicDto {
         userBasic.setType(userType);
         entityManager.flush();
     }
+   
+    @Override
+    @Transactional
+    public void updateUserBasic(Userbasic userBasic) {
+        entityManager.merge(userBasic);
+        entityManager.flush();
+    }
 }

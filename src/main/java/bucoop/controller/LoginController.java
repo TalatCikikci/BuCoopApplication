@@ -65,4 +65,12 @@ public class LoginController {
 
         return "redirect:/";
     }
+    
+    @RequestMapping(value = "/logout", method = RequestMethod.GET)
+    public String logout(HttpServletRequest httpServletRequest,
+                         RedirectAttributes redirectAttributes) {
+        redirectAttributes.addFlashAttribute("successMessage", "Logged out!");
+        httpServletRequest.getSession().invalidate();
+        return "redirect:/";
+    }
 }

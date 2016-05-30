@@ -32,14 +32,14 @@
                                 </div>
                                     
                                 <div class="control-group">
-                                    <label class="control-label" for="profileLastName">
+                                    <label class="control-label" for="profileSurname">
                                         Last Name
                                     </label>
 
                                     <div class="controls">
-                                        <input id="profileLastName" type="text" name="lastname">
+                                        <input id="profileSurname" type="text" name="surname">
                                         <label class="checkbox">
-                                            <input type="checkbox" name="lastnameVisible">
+                                            <input type="checkbox" name="surnameVisible">
                                             Private?
                                         </label>
                                     </div>

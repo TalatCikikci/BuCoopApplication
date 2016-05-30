@@ -23,7 +23,7 @@
                                     </label>
 
                                     <div class="controls">
-                                        <input id="profileFirstName" type="text" name="firstname" value="${sessionFirstName}" readonly>
+                                        <input id="profileFirstName" type="text" name="firstname" value="<c:out value="${sessionFirstName}"/>" readonly>
                                     </div>
                                 </div>
                                     
@@ -33,7 +33,7 @@
                                     </label>
 
                                     <div class="controls">
-                                        <input id="profileLastName" type="text" name="lastname" value="${sessionSurname}" readonly>
+                                        <input id="profileLastName" type="text" name="lastname" value="<c:out value="${sessionSurname}"/>" readonly>
                                     </div>
                                 </div>
 
@@ -43,7 +43,7 @@
                                     </label>
 
                                     <div class="controls">
-                                        <input id="profileEmail" type="text" name="email" value="${sessionEmail}" readonly>
+                                        <input id="profileEmail" type="text" name="email" value="<c:out value="${sessionEmail}"/>" readonly>
                                     </div>
                                 </div>
 
@@ -61,6 +61,11 @@
                     <div class="span6">
                         <c:if test="${sessionAvatar==null}">
                             <img src="http://placehold.it/750x500" alt="Profile Image" class="img-responsive">
+<!--                            <form method="POST" action="<c:url value='/upload' />"
+                                enctype="multipart/form-data">
+                                Please select a file to upload : <input type="file" name="file" />
+                                <input type="submit" value="upload" />
+                            </form>-->
                         </c:if>
                         <c:if test="${sessionAvatar!=null}">
                             <img  value="<c:out value="${sessionAvatar}"/>" alt="">

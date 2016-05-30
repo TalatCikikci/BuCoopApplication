@@ -27,4 +27,10 @@ public class UseradditionalDtoImpl implements UseradditionalDto {
         return userAdditional;
     }
     
+    @Override
+    @Transactional
+    public void updateUserAdditional(Useradditional userAdditional) {
+        entityManager.merge(userAdditional);
+        entityManager.flush();
+    }
 }

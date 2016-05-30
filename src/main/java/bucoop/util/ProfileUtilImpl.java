@@ -38,14 +38,26 @@ public class ProfileUtilImpl implements ProfileUtil {
     }
     
     @Override
-    public boolean editProfile(String firstname, String lastname, String email, String about) {
-        final Useradditional userAdditional = new Useradditional();
+    public boolean editProfileInfo(String firstname, String surname, String email, String about, Useradditional userAdditional) {
 
         userAdditional.setFirstname(firstname);
-        userAdditional.setSurname(lastname);
+        userAdditional.setSurname(surname);
         userAdditional.setEmail(email);
         userAdditional.setAbout(about);
-        userAdditionalDto.persistUserAdditionalInfo(userAdditional);
+        
+        userAdditionalDto.updateUserAdditional(userAdditional);
+        return true;
+    }
+    
+    @Override
+    public boolean editProfilePrivacy(boolean firstnamePriv, boolean surnamePriv, boolean emailPriv, boolean aboutPriv, Userprivacy userPrivacy) {
+        
+        userPrivacy.setFirstnamepriv(firstnamePriv);
+        userPrivacy.setSurnamepriv(surnamePriv);
+        userPrivacy.setEmailpriv(emailPriv);
+        userPrivacy.setEmailpriv(emailPriv);
+
+        userPrivacyDto.updateUserPrivacy(userPrivacy);
         return true;
     }
 }

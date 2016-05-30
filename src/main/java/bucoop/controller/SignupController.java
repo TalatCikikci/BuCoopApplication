@@ -47,8 +47,11 @@ public class SignupController {
         final boolean signUpSuccessful
                 = signupUtil.signUp(username, email, password);
 
-//        if (!signUpSuccessful) {
-//        }
+        if (!signUpSuccessful) {
+            final String successMessage = "Something went wrong while signing up!";
+            redirectAttributes.addFlashAttribute("successMessage", successMessage);
+            return "redirect:signup";
+        }
 
         final String successMessage = "Successfully signed up!";
         final Userbasic userBasic = loginUtil.getAppUserWithName(username);

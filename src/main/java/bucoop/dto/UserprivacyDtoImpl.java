@@ -27,4 +27,11 @@ public class UserprivacyDtoImpl implements UserprivacyDto {
         }
         return userPrivacy;
     }
+    
+    @Override
+    @Transactional
+    public void updateUserPrivacy(Userprivacy userPrivacy) {
+        entityManager.merge(userPrivacy);
+        entityManager.flush();
+    }
 }

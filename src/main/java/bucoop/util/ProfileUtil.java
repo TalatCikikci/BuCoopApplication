@@ -6,7 +6,9 @@ import bucoop.model.Userprivacy;
 
 public interface ProfileUtil {
     
-    boolean editProfile(String firstname, String lastname, String email, String about);
+    boolean editProfileInfo(String firstname, String surname, String email, String about, Useradditional userAdditional);
+    
+    boolean editProfilePrivacy(boolean firstnamePriv, boolean surnamePriv, boolean emailPriv, boolean aboutPriv, Userprivacy userPrivacy);
     
     Userbasic getProfileById(Integer userID);
     

@@ -13,4 +13,6 @@ public interface UserbasicDto {
     Userbasic getAppUserWithId(Integer userId);
 
     void setType(String username , String userType);
+    
+    void updateUserBasic(Userbasic userBasic);
 }
