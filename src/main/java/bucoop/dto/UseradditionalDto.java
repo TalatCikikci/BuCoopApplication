@@ -9,5 +9,5 @@ public interface UseradditionalDto {
     
     Useradditional getUserAdditionalWithId(Integer userId);
     
-        void updateUserAdditional(Useradditional userAdditional);
+    void updateUserAdditional(Useradditional userAdditional);
 }

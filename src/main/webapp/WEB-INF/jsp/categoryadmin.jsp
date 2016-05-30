@@ -11,7 +11,7 @@
             <div class="row-fluid">
                 <div class="span12">
                     <div class="page-header">
-                        <h1 class="form-heading">Add Category</h1>
+                        <h1 class="form-heading">Category List</h1>
                     </div>
                     <div class="span3">
                         <div class="well sidebar-nav">
@@ -68,21 +68,26 @@
                     </div>
                     <div class="span6">
                         <div class="area">
-                            <form class="form-horizontal" method="post" role="form" action="${pageContext.servletContext.contextPath}/addcategory">
-
-                                <div class="control-group">
-                                    <label class="control-label" for="inputCategoryname">Category Name</label>
-
-                                    <div class="controls">
-                                        <input id="inputCategoryname" placeholder="E.g. Cheese" type="text" name="categoryname">
-                                    </div>
-                                </div>
-
-                                <div class="control-group">
-                                    <div class="controls"> <button class="btn btn-success" type="submit">Add</button>
-                                    </div>
-                                </div>
-                            </form>
+                            <div class="table-responsive">
+                                <table class="table table-hover table-bordered table-striped">
+                                  <thead>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>Category Name</th>
+                                            <th>Operation</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                            <c:forEach items="${categoryList}" var="categoryList">
+                                                <tr>
+                                                    <td><c:out value="${categoryList.id}"/></td>
+                                                    <td><c:out value="${categoryList.categoryname}"/></td>
+                                                    <td><button class="close">&times;</button></td>
+                                                </tr>
+                                            </c:forEach>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
                 </div>
