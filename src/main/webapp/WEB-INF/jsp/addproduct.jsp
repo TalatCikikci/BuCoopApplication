@@ -82,7 +82,7 @@
                                     <label class="control-label" for="inputDescription">Product Description</label>
 
                                     <div class="controls">
-                                        <textarea id="inputDescription" placeholder="E.g. Description / Phone / Address" type="text" name="productdesc"></textarea>
+                                        <textarea id="inputDescription" rows="5" placeholder="E.g. This poduct is produced in..." type="text" name="productdesc"></textarea>
                                     </div>
                                 </div>
 
