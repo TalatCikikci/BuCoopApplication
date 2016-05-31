@@ -41,6 +41,12 @@ public class ProductUtilImpl implements ProductUtil{
     }
     
     @Override
+    public List<Product> getProductListByItem(String searchitem){
+        final List<Product> productCollection = productDto.getProductList();
+        return productCollection;
+    }
+    
+    @Override
     public Product getProductById(Integer productID) {
         Product producttitle = productDto.getProductWithId(productID);
         return producttitle;
@@ -64,5 +70,11 @@ public class ProductUtilImpl implements ProductUtil{
     public Category getCategoryById(Integer categoryID) {
         Category categoryname = categoryDto.getCategoryWithId(categoryID);
         return categoryname;
+    }
+    
+    @Override
+    public List<Category> getCategoryListByItem(String searchitem){
+        final List<Category> categoryCollection = categoryDto.getCategoryList();
+        return categoryCollection;
     }
 }

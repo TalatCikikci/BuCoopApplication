@@ -40,4 +40,28 @@ public class ProducerDtoImpl implements ProducerDto{
         final List<Producer> producerList = getProducers();
         return producerList;
     }
+    
+    @Override
+    @Transactional
+    public List<Producer> getProducerByName(String producername) {
+        final List producersWithName = entityManager.createQuery("SELECT h FROM Producer h WHERE h.producername = :producername")
+                .setParameter("producername", producername).getResultList();
+        return producersWithName;
+    }
+    
+    @Override
+    @Transactional
+    public List<Producer> getProducerByDescription(String producerdesc) {
+        final List producersWithDescription = entityManager.createQuery("SELECT h FROM Producer h WHERE h.producerdesc = :producerdesc")
+                .setParameter("producerdesc", producerdesc).getResultList();
+        return producersWithDescription;
+    }
+    
+    @Override
+    @Transactional
+    public List<Producer> getProducerByLocation(String location) {
+        final List producersWithLocation = entityManager.createQuery("SELECT h FROM Producer h WHERE h.location = :location")
+                .setParameter("location", location).getResultList();
+        return producersWithLocation;
+    }
 }
