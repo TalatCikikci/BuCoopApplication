@@ -8,9 +8,9 @@ public interface AnnouncementUtil {
     
     boolean addAnnouncement(String announcementtitle, String announcementbody);
     
-    boolean deleteAnnouncement(Integer productID);
+    boolean deleteAnnouncement(Integer announcementID);
     
-    Announcement getAnnouncementById(Integer categoryID);
+    Announcement getAnnouncementById(Integer announcementID);
     
     List<Announcement> getAnnouncementList();
 }

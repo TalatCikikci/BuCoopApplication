@@ -13,11 +13,13 @@ public class AnnouncementDtoImpl implements AnnouncementDto{
     @PersistenceContext
     private EntityManager entityManager;
 
+    
     @Override
     @Transactional
     public void persistAnnouncement(Announcement announcement) {
         entityManager.persist(announcement);
     }
+    
     
     @Override
     public Announcement getAnnouncementWithId(Integer announcementId) {
@@ -27,6 +29,7 @@ public class AnnouncementDtoImpl implements AnnouncementDto{
         }
         return announcement;
     }
+    
     
     @Override
     public List<Announcement> getAnnouncements() {

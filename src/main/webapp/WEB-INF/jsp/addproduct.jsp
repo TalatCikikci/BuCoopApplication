@@ -90,7 +90,11 @@
                                     <label class="control-label" for="inputProducer">Producer</label>
 
                                     <div class="controls">
-                                        <input id="inputProducer" type="text" name="producer">
+                                        <Select name="producer" size="1" id="selectProducer">
+                                            <c:forEach items="${producerList}" var="producerList">
+                                                  <option value="${producerList.id}"><c:out value="${producerList.producername}"/></option>
+                                            </c:forEach>
+                                        </select>
                                     </div>
                                 </div>
                                 
@@ -98,7 +102,11 @@
                                     <label class="control-label" for="inputCategory">Category</label>
 
                                     <div class="controls">
-                                        <input id="inputCategory" type="text" name="category">
+                                        <Select name="category" size="1" id="selectCategory">
+                                            <c:forEach items="${categoryList}" var="categoryList">
+                                                  <option value="${categoryList.id}"><c:out value="${categoryList.categoryname}"/></option>
+                                            </c:forEach>
+                                        </select>
                                     </div>
                                 </div>
 

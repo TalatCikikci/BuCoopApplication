@@ -3,8 +3,11 @@ package bucoop.controller;
 import bucoop.dto.CategoryDto;
 import bucoop.model.Announcement;
 import bucoop.model.Category;
+import bucoop.model.Producer;
+import bucoop.model.Product;
 import bucoop.model.Userbasic;
 import bucoop.util.AnnouncementUtil;
+import bucoop.util.ProducerUtil;
 import bucoop.util.ProductUtil;
 import bucoop.util.ProfileUtil;
 import java.util.List;
@@ -30,6 +33,9 @@ public class AdminConsoleController {
     @Autowired
     private AnnouncementUtil announcementUtil;
     
+    @Autowired
+    private ProducerUtil producerUtil;
+    
     @RequestMapping(value = "/adminconsole", method = RequestMethod.GET)
     public String displayConsole(Model model) {
         return "adminconsole";
@@ -48,12 +54,21 @@ public class AdminConsoleController {
     }
     
     @RequestMapping(value = "/productadmin", method = RequestMethod.GET)
-    public String displayProductadmin(Model model) {
+    public String displayProductadmin(HttpServletRequest httpServletRequest) {
+        final List<Product> productList = productUtil.getProductList();
+        httpServletRequest.getSession().setAttribute("productList", productList);
         return "productadmin";
     }
     
     @RequestMapping(value = "/addproduct", method = RequestMethod.GET)
-    public String displayAddProductadmin(Model model) {
+    public String displayAddProductadmin(HttpServletRequest httpServletRequest) {
+        
+        final List<Producer> producerList = producerUtil.getProducerList();
+        final List<Category> categoryList = productUtil.getCategoryList();
+        
+        httpServletRequest.getSession().setAttribute("categoryList", categoryList);
+        httpServletRequest.getSession().setAttribute("producerList", producerList);
+        
         return "addproduct";
     }
     
@@ -70,7 +85,9 @@ public class AdminConsoleController {
     }
     
     @RequestMapping(value = "/produceradmin", method = RequestMethod.GET)
-    public String displayProduceradmin(Model model) {
+    public String displayProduceradmin(HttpServletRequest httpServletRequest) {
+        final List<Producer> producerList = producerUtil.getProducerList();
+        httpServletRequest.getSession().setAttribute("producerList", producerList);
         return "produceradmin";
     }
     
@@ -97,7 +114,24 @@ public class AdminConsoleController {
     }
     
     @RequestMapping(value = "/addproduct", method = RequestMethod.POST)
-    public String addProductadmin(Model model) {
+    public String addProductadmin(@RequestParam String productname,
+                                    String productdesc,
+                                    Integer producer,
+                                    Integer category,
+                                    Model model,
+                                    RedirectAttributes redirectAttributes,
+                                    HttpServletRequest httpServletRequest) {
+        
+        final boolean productAdded = productUtil.addProduct(productname, productdesc, producer, category);
+        
+        if (!productAdded) {
+            final String successMessage = "Product could not be added!";
+            redirectAttributes.addFlashAttribute("successMessage", successMessage);
+            return "redirect:addproduct";
+        }
+        
+        final String successMessage = "Product created!";
+        redirectAttributes.addFlashAttribute("successMessage", successMessage);
         return "redirect:productadmin";
     }
     
@@ -122,7 +156,24 @@ public class AdminConsoleController {
     }
     
     @RequestMapping(value = "/addproducer", method = RequestMethod.POST)
-    public String addProduceradmin(Model model) {
+    public String addProduceradmin(@RequestParam String producername,
+                                    String producerdesc,
+                                    String location,
+                                    Model model,
+                                    RedirectAttributes redirectAttributes,
+                                    HttpServletRequest httpServletRequest) {
+        
+        final boolean producerAdded = producerUtil.addProducer(producername, producerdesc, location);
+        
+        if (!producerAdded) {
+            final String successMessage = "Producer could not be added!";
+            redirectAttributes.addFlashAttribute("successMessage", successMessage);
+            return "redirect:addproducer";
+        }
+        
+        final String successMessage = "Producer created!";
+        redirectAttributes.addFlashAttribute("successMessage", successMessage);
+        
         return "redirect:produceradmin";
     }
     
