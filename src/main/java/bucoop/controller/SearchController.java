@@ -4,6 +4,7 @@ import bucoop.model.Announcement;
 import bucoop.model.Category;
 import bucoop.model.Producer;
 import bucoop.model.Product;
+import bucoop.model.Productall;
 import bucoop.model.Useradditional;
 import bucoop.model.Userbasic;
 import bucoop.util.AnnouncementUtil;
@@ -49,19 +50,21 @@ public class SearchController {
                         RedirectAttributes redirectAttributes,
                         HttpServletRequest httpServletRequest) {
         
-        final List<Userbasic> userbasicList = profileUtil.getBasicUsersListByItem(searchitem);
-        final List<Useradditional> useradditionalList = profileUtil.getAdditionalUsersListByItem(searchitem);
-        final List<Producer> producerList = producerUtil.getProducerListByItem(searchitem);
-        final List<Category> categoryList = productUtil.getCategoryListByItem(searchitem);
-        final List<Product> productList = productUtil.getProductListByItem(searchitem);
-        final List<Announcement> announcementList = announcementUtil.getAnnouncementListByItem(searchitem);
+        //final List<Userbasic> userbasicList = profileUtil.getBasicUsersListByItem(searchitem);
+        //final List<Useradditional> useradditionalList = profileUtil.getAdditionalUsersListByItem(searchitem);
+        //final List<Producer> producerList = producerUtil.getProducerListByItem(searchitem);
+        //final List<Category> categoryList = productUtil.getCategoryListByItem(searchitem);
+        //final List<Product> productList = productUtil.getProductListByItem(searchitem);
+        //final List<Announcement> announcementList = announcementUtil.getAnnouncementListByItem(searchitem);
+        final List<Productall> productAllList = productUtil.getProductInfoByKeyword(searchitem);
         
-        httpServletRequest.getSession().setAttribute("announcementList", announcementList);
-        httpServletRequest.getSession().setAttribute("categoryList", categoryList);
-        httpServletRequest.getSession().setAttribute("producerList", producerList);
-        httpServletRequest.getSession().setAttribute("userbasicList", userbasicList);
-        httpServletRequest.getSession().setAttribute("useradditionalList", useradditionalList);
-        httpServletRequest.getSession().setAttribute("productList", productList);
+        
+//        httpServletRequest.getSession().setAttribute("announcementList", announcementList);
+//        httpServletRequest.getSession().setAttribute("categoryList", categoryList);
+//        httpServletRequest.getSession().setAttribute("producerList", producerList);
+//        httpServletRequest.getSession().setAttribute("userbasicList", userbasicList);
+//        httpServletRequest.getSession().setAttribute("useradditionalList", useradditionalList);
+        httpServletRequest.getSession().setAttribute("productList", productAllList);
         
         return "searchresults";
     }

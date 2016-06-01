@@ -2,6 +2,7 @@ package bucoop.util;
 
 import bucoop.model.Category;
 import bucoop.model.Product;
+import bucoop.model.Productall;
 import java.util.List;
 
 
@@ -25,4 +26,7 @@ public interface ProductUtil {
     
     List<Category> getCategoryListByItem(String searchitem);
     
+    Productall getAllProductInformation(Integer productId);
+    
+    List<Productall> getProductInfoByKeyword(String searchitem);
 }
