@@ -49,19 +49,19 @@ public class SearchController {
                         Model model,
                         RedirectAttributes redirectAttributes,
                         HttpServletRequest httpServletRequest) {
-        
-        //final List<Userbasic> userbasicList = profileUtil.getBasicUsersListByItem(searchitem);
-        //final List<Useradditional> useradditionalList = profileUtil.getAdditionalUsersListByItem(searchitem);
-        //final List<Producer> producerList = producerUtil.getProducerListByItem(searchitem);
-        //final List<Category> categoryList = productUtil.getCategoryListByItem(searchitem);
-        //final List<Product> productList = productUtil.getProductListByItem(searchitem);
-        //final List<Announcement> announcementList = announcementUtil.getAnnouncementListByItem(searchitem);
+
+//        final List<Userbasic> userbasicList = profileUtil.getBasicUsersListByItem(searchitem);
+//        final List<Useradditional> useradditionalList = profileUtil.getAdditionalUsersListByItem(searchitem);
+        final List<Producer> producerList = producerUtil.getProducerListByItem(searchitem);
+//        final List<Category> categoryList = productUtil.getCategoryListByItem(searchitem);
+//        final List<Product> productList = productUtil.getProductListByItem(searchitem);
+//        final List<Announcement> announcementList = announcementUtil.getAnnouncementListByItem(searchitem);
         final List<Productall> productAllList = productUtil.getProductInfoByKeyword(searchitem);
         
         
 //        httpServletRequest.getSession().setAttribute("announcementList", announcementList);
 //        httpServletRequest.getSession().setAttribute("categoryList", categoryList);
-//        httpServletRequest.getSession().setAttribute("producerList", producerList);
+        httpServletRequest.getSession().setAttribute("producerList", producerList);
 //        httpServletRequest.getSession().setAttribute("userbasicList", userbasicList);
 //        httpServletRequest.getSession().setAttribute("useradditionalList", useradditionalList);
         httpServletRequest.getSession().setAttribute("productList", productAllList);

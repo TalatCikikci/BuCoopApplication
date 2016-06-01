@@ -10,7 +10,8 @@
         <h1>Search Results for ${searchitem}</h1>
         <div class="span12">
             <div class="span6">
-                <h4>Product List</h4>
+                <h4>Product Results</h4>
+                <p><i>*Includes products that have the keyword in product name, product description, producer name, producer description and product category.</i></p>
                 <div class="area">
                     <div class="table-responsive">
                         <table class="table table-hover table-bordered table-striped">
@@ -33,11 +34,29 @@
                         </table>
                     </div>
                 </div>
-          </div>
-          <div class="span6">
-            SECOND COLUMN
-          </div>
-        </div>     
-     
+            </div>
+            <div class="span6">
+                <h4>Producer Results</h4>
+                <p><i>*Includes producers that have the keyword in producer name and producer description.</i></p>
+                <div class="area">
+                    <div class="table-responsive">
+                        <table class="table table-hover table-bordered table-striped">
+                          <thead>
+                                <tr>
+                                    <th>Producer Name</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <c:forEach items="${producerList}" var="producerList">
+                                    <tr>
+                                        <td><c:out value="${producerList.producername}"/></td>
+                                    </tr>
+                                </c:forEach>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
     </body>
 </html>
