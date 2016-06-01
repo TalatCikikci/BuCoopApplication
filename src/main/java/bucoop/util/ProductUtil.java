@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface ProductUtil {
     
-    boolean addProduct(String productname, String productdesc, Integer producer, Integer category);
+    boolean addProduct(String productname, String productdesc, Integer producer, Integer category, Boolean isactive);
 
     Product getProductById(Integer productID);
     

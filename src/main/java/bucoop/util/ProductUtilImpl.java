@@ -21,12 +21,13 @@ public class ProductUtilImpl implements ProductUtil{
     
     
     @Override
-    public boolean addProduct(String productname, String productdesc, Integer producer, Integer category){
+    public boolean addProduct(String productname, String productdesc, Integer producer, Integer category, Boolean isactive){
         final Product product = new Product();
         product.setProductname(productname);
         product.setProductdesc(productdesc);
         product.setProducer(producer);
         product.setCategory(category);
+        product.setActive(isactive);
         productDto.persistProduct(product);
         return true;
     }
