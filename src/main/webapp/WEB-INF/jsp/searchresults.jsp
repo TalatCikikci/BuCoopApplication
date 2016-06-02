@@ -49,7 +49,7 @@
                             <tbody>
                                 <c:forEach items="${producerList}" var="producerList">
                                     <tr>
-                                        <td><a href="/producer/<c:out value="${producerList.producerid}"/>"><c:out value="${producerList.producername}"/></a></td>
+                                        <td><a href="/producer/<c:out value="${producerList.id}"/>"><c:out value="${producerList.producername}"/></a></td>
                                     </tr>
                                 </c:forEach>
                             </tbody>
